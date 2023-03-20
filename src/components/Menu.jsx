@@ -17,6 +17,8 @@ import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   position: sticky;
   top: 0;
@@ -36,6 +38,8 @@ const Logo = styled.div`
   gap: 5px;
   font-weight: medium;
   margin-bottom: 25px;
+
+  font-size: 24px;
 `;
 const Img = styled.img`
   height: 25px;
@@ -48,8 +52,9 @@ const Item = styled.div`
   padding: 10px 0px;
 `;
 const Hr = styled.hr`
-  border: 0.1px solid ${({ theme }) => theme.soft};
-  margin: 15px 0px;
+  border-color: ${({ theme }) => theme.soft};
+  border-width: thin;
+  margin: 15px 0px 10px;
 `;
 const Login = styled.div`
   font-size: 14px;
@@ -69,18 +74,19 @@ const Button = styled.button`
   cursor: pointer;
 `;
 const Title = styled.div`
-    font-size: 16px;
-    font-weight: medium;
-
-`
+  font-size: 16px;
+  font-weight: medium;
+`;
 const Menu = ({ darkMode, setDarkMode }) => {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={besocial} />
-          Besocial
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Logo>
+            <Img src={besocial} />
+            Besocial
+          </Logo>
+        </Link>
         <Item>
           <HomeIcon /> Home
         </Item>
@@ -134,7 +140,8 @@ const Menu = ({ darkMode, setDarkMode }) => {
           <HelpOutlineOutlinedIcon /> Help
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
-          <LightModeOutlinedIcon /> Light Mode
+          {darkMode ? <LightModeOutlinedIcon /> : <DarkModeIcon />}{" "}
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </Item>
       </Wrapper>
     </Container>
