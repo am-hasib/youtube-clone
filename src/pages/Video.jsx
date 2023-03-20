@@ -92,7 +92,7 @@ const Video = () => {
             height="683"
             src="https://www.youtube.com/embed/jLS0TkAHvRg"
             title="React 18 Fundamentals Crash Course"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
@@ -149,11 +149,19 @@ const Video = () => {
         <Comments />
       </Content>
       <Recommendations>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
+        <Card type="sm" />
       </Recommendations>
     </Container>
   );

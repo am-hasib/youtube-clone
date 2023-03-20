@@ -2,22 +2,24 @@ import React from "react";
 import styled from "styled-components";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   position: sticky;
   top: 0;
-  z-index: 1;
   background: ${({ theme }) => theme.bgLight};
-  padding: 8px 20px;
+  height: 60px;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  height: 100%;
+  padding: 0px 20px;
   position: relative;
 `;
 const Search = styled.div`
-  width: 45%;
+  width: 40%;
   border: 1px solid #aaa;
   border-radius: 3px;
   position: absolute;
@@ -33,7 +35,7 @@ const Input = styled.input`
   border: none;
   outline: none;
   background: transparent;
-  color: ${({theme})=> theme.text};
+  color: ${({ theme }) => theme.text};
 `;
 const Button = styled.button`
   font-size: 14px;
@@ -47,6 +49,13 @@ const Button = styled.button`
   font-weight: bold;
   margin: 10px 0px;
   cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: ${({ theme }) => theme.soft};
+    color: ${({ theme }) => theme.textSoft};
+    text-decoration: none;
+  }
 `;
 const Navbar = () => {
   return (
@@ -56,9 +65,11 @@ const Navbar = () => {
           <Input placeholder="Search..." />
           <SearchIcon />
         </Search>
-        <Button>
-          <AccountCircleOutlinedIcon /> Sign in
-        </Button>
+        <Link to="/signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleOutlinedIcon /> Sign in
+          </Button>
+        </Link>
       </Wrapper>
     </Container>
   );

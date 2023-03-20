@@ -49,7 +49,14 @@ const Item = styled.div`
   align-items: center;
   gap: 10px;
   cursor: pointer;
-  padding: 10px 0px;
+  padding: 10px 10px;
+  margin: 5px 0px;
+  color: ${({ theme }) => theme.textSoft};
+  &:hover {
+    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.soft};
+    border-radius: 48px;
+  }
 `;
 const Hr = styled.hr`
   border-color: ${({ theme }) => theme.soft};
@@ -105,9 +112,11 @@ const Menu = ({ darkMode, setDarkMode }) => {
         </Item>
         <Hr />
         <Login>Sign in to like videos, comment and subscribe</Login>
-        <Button>
-          <AccountCircleOutlinedIcon /> Sign in
-        </Button>
+        <Link to="/signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleOutlinedIcon /> Sign in
+          </Button>
+        </Link>
         <Hr />
         <Title>Best of BeSocial</Title>
         <Item>
