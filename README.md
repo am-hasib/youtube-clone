@@ -1,5 +1,7 @@
 # youtube-clone
+### 📚️ Techonology: React 18.2, React Router Dom, Styled Component, Matarial UI icons
 ## Dark Mode Implementation 
-![My Image](DarkMode.png)
+![](DarkMode.png)
 ## Light Mode Implementation 
-![My Image](lightMode.png)
+![](lightMode.png)
+,
